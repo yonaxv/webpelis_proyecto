@@ -1,0 +1,54 @@
+//Variables
+$color-primario: rgb(24, 24, 24);
+$font: "Open Sans", Helvetica, Arial, sans-serif;
+$fontcolorbody : #777;
+$Colorbordetextogold : yellow;
+$tamañobordesgold : 3px;
+
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+html {
+	scroll-behavior: smooth;
+	height: 100%;
+}
+body {
+	font-family: sans-serif;
+	background-color: $color-primario;
+	height: 100%;
+	font-family: $font;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 30px;
+	color: $fontcolorbody;
+}
+
+$redesSociales : (
+	Facebook: rgb(2, 78, 241),
+	Youtube: rgb(255, 0, 0),
+	Twitter: rgba(0, 183, 255, 0.555),
+	Whatsapp: rgb(0, 255, 0)
+);
+
+@each $red, $color in $redesSociales {
+	.btn--#{$red}{
+		background-color: $color;
+	}
+}
+
+@mixin bordes($color, $width) {
+	border: $width solid $color;
+  }
+.bordetexto {
+	@include bordes($Colorbordetextogold, $tamañobordesgold);
+}
